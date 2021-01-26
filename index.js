@@ -30,9 +30,11 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   1. What is the difference between counter1 and counter2?
         Counter 1 has two returns while counter 2 only has one.
   2. Which of the two uses a closure? How can you tell?
-        Counter 1 because 
+        Counter 1 because it completes a task outside of its function.
   3. In what scenario would the counter1 code be preferable? In what scenario would
      counter2 be better?
+        Counter 1 
+        Counter 2
 */
 
 // counter1 code
@@ -83,7 +85,25 @@ Use the finalScore function below to do the following:
 
 function finalScore(/*code Here*/){
   /*Code Here*/
+
+
+  function finalScore(inning, numInnings){
+    let score = {
+      Home: 0,
+      Away: 0
+    }
+
+    for (i = 0; i < numInnings; i++) {
+      score.Home += inning();
+      score.Away += inning();
+      console.log(inning());
+    }
+    return score;
+  }
+
 }
+
+console.log(finalScore(inning,9));
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
